@@ -5,6 +5,7 @@ import { projects } from "@/Data";
 import { PinContainer } from "./ui/3d-pin";
 import Link from "next/link";
 import SplitText from "./ui/splitText";
+import Image from "next/image";
 
 const RecentProjects = () => {
     return (
@@ -36,11 +37,12 @@ const RecentProjects = () => {
                                     className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                                     style={{ backgroundColor: "#13162D" }}
                                 >
-                                    <img src="/bg.png" alt="bgimg" />
+                                    <Image src="/bg.png" fill alt="bgImage" className="object-cover"/>
                                 </div>
-                                <img
+                                <Image
                                     src={item.img}
                                     alt="cover"
+                                    fill
                                     className="z-10 absolute bottom-0"
                                 />
                             </div>
@@ -69,7 +71,7 @@ const RecentProjects = () => {
                                                 transform: `translateX(-${5 * index + 2}px)`,
                                             }}
                                         >
-                                            <img src={icon} alt="icon" className="p-2" />
+                                            <Image src={icon} alt="icon" fill className="p-2" />
                                         </div>
                                     ))}
                                 </div>

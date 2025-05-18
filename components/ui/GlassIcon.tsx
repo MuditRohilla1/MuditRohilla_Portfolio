@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image"; // Use Next.js Image component
 
 export interface GlassIconsItem {
     icon: React.ReactElement;
     color: string;
     label: string;
-    imageSrc?: string; // new field for image
+    imageSrc?: string;
     customClass?: string;
 }
 
@@ -44,16 +45,20 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
                         style={getBackgroundStyle(item.color)}
                     ></span>
                     <span className="icon-btn__front">
-                        {item.imageSrc && (
-                            <img
+                        {item.imageSrc ? (
+                            <Image
                                 src={item.imageSrc}
                                 alt={item.label}
                                 className="icon-btn__img"
+                                width={40}
+                                height={40}
+                            // You can adjust width/height as needed
                             />
+                        ) : (
+                            <span className="icon-btn__icon" aria-hidden="true">
+                                {item.icon}
+                            </span>
                         )}
-                        {/* <span className="icon-btn__icon" aria-hidden="true">
-                            {item.icon}
-                        </span> */}
                     </span>
                     <span className="icon-btn__label">{item.label}</span>
                 </button>

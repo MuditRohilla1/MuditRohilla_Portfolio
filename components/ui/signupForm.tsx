@@ -44,7 +44,9 @@ export function SignUpForm() {
 
     return (
         <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
-            <h2 className="text-xl font-bold text-emerald-700 dark:text-emerald-400">Let's Catch Up !!</h2>
+            <h2 className="text-xl font-bold text-emerald-700 dark:text-emerald-400">
+                Let&apos;s Catch Up !!
+            </h2>
             <p className="mt-2 max-w-sm text-sm text-emerald-600 dark:text-emerald-300 capitalize">
                 Please Fill Up the details to get in touch
             </p>

@@ -24,7 +24,7 @@ const Contacts = () => {
             {/* Foreground content */}
             <div className="relative z-10">
                 <h1 className="text-center text-3xl md:text-4xl font-bold mb-10">
-                    Let's Build a New{" "}
+                    Let&apos;s Build a New{' '}
                     <SplitText
                         text="Connection !!"
                         className="text-emerald-500 italic"

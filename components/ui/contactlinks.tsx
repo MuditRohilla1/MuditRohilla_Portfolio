@@ -6,10 +6,6 @@ import {
     IconBrandLeetcode,
     IconBrandLinkedin,
     IconBrandX,
-    IconExchange,
-    IconHome,
-    IconNewSection,
-    IconTerminal2,
 } from "@tabler/icons-react";
 
 export function ContactLinks() {

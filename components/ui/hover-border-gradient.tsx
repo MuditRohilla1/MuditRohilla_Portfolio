@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion"; // use 'framer-motion' instead of 'motion/react'
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
@@ -46,7 +46,7 @@ export function HoverBorderGradient({
             }, duration * 1000);
             return () => clearInterval(interval);
         }
-    }, [hovered, duration, clockwise]);
+    }, [hovered, duration, clockwise, rotateDirection]);
 
     return (
         <Tag
