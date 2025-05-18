@@ -15,7 +15,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mudit's Portfolio",
-  description: "",
+  description: "A Portfolio to describe Mudit Rohilla",
+  icons: {
+        icon: [
+            {
+                url: "/profile.png", // Path to your logo file in the public directory
+                href: "/Profile.png", // Path to your logo file in the public directory
+            },
+        ],
+    },
 };
 
 export default function RootLayout({
