@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect, useId } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -26,7 +25,7 @@ export function ContainerTextFlip({
 
     const updateWidthForWord = () => {
         if (textRef.current) {
-            // @ts-expect-error: scrollWidth is a valid property here
+            // scrollWidth is a valid property on HTMLDivElement
             const textWidth = textRef.current.scrollWidth + 30;
             setWidth(textWidth);
         }
@@ -34,7 +33,6 @@ export function ContainerTextFlip({
 
     useEffect(() => {
         updateWidthForWord();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentWordIndex]);
 
     useEffect(() => {

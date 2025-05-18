@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -23,12 +23,11 @@ export function HoverBorderGradient({
     const [hovered, setHovered] = useState(false);
     const [direction, setDirection] = useState<Direction>("TOP");
 
-    const directions: Direction[] = ["TOP", "LEFT", "BOTTOM", "RIGHT"];
-    const rotateDirection = (current: Direction): Direction => {
-        const index = directions.indexOf(current);
-        const next = clockwise ? (index + 1) % directions.length : (index - 1 + directions.length) % directions.length;
-        return directions[next];
-    };
+    // Explicitly type the directions array as Direction[]
+    const directions = useMemo<Direction[]>(
+        () => ["TOP", "LEFT", "BOTTOM", "RIGHT"],
+        []
+    );
 
     const movingMap: Record<Direction, string> = {
         TOP: "radial-gradient(40% 60% at 50% 0%, #3b82f6 0%, rgba(59, 130, 246, 0) 100%)",
@@ -40,13 +39,21 @@ export function HoverBorderGradient({
     const highlight = "radial-gradient(circle at center, #60a5fa 0%, rgba(96, 165, 250, 0) 100%)";
 
     useEffect(() => {
+        const rotateDirection = (current: Direction): Direction => {
+            const index = directions.indexOf(current);
+            const next = clockwise ? 
+                (index + 1) % directions.length : 
+                (index - 1 + directions.length) % directions.length;
+            return directions[next]; // Now properly typed as Direction
+        };
+
         if (!hovered) {
             const interval = setInterval(() => {
                 setDirection((prev) => rotateDirection(prev));
             }, duration * 1000);
             return () => clearInterval(interval);
         }
-    }, [hovered, duration, clockwise, rotateDirection]);
+    }, [hovered, duration, clockwise, directions]);
 
     return (
         <Tag

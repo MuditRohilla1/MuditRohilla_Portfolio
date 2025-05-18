@@ -44,7 +44,8 @@ interface ScrollVelocityProps {
     scrollerStyle?: React.CSSProperties;
 }
 
-function useElementWidth(ref: React.RefObject<HTMLElement>): number {
+// FIX: Accept HTML element refs that may be null (React 19+)
+function useElementWidth(ref: React.RefObject<HTMLElement | null>): number {
     const [width, setWidth] = useState(0);
 
     useLayoutEffect(() => {
@@ -107,7 +108,8 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
         );
 
         const copyRef = useRef<HTMLSpanElement>(null);
-        const copyWidth = useElementWidth(copyRef);
+        // FIX: Pass as HTMLSpanElement | null, which extends HTMLElement | null
+        const copyWidth = useElementWidth(copyRef as React.RefObject<HTMLElement | null>);
 
         function wrap(min: number, max: number, v: number): number {
             const range = max - min;
