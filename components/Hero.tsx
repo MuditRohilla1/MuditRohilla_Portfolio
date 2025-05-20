@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
     return (
-        <div id="Home" className="relative pb-20 pt-36 overflow-visible">
+        <div id="Home" className="relative pb-20 sm:pt-28 md:pt-36 lg:pt-36 overflow-visible">
             {/* Animated Particles or Glow */}
             <Spotlight />
 
