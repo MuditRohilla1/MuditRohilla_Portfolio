@@ -1,5 +1,4 @@
-import React from 'react'
-import GlassIcons from './ui/GlassIcon';
+import React from 'react';
 import {
     FiBarChart2,
     FiBook,
@@ -10,6 +9,7 @@ import {
 } from 'react-icons/fi';
 import { BackgroundBeamsWithCollision } from './ui/background-beams-with-collision';
 import SplitText from './ui/splitText';
+import GlassIcons from './ui/GlassIcon';
 
 const items = [
     {
@@ -80,28 +80,53 @@ const items = [
     },
 ];
 
-
 const Skills = () => {
     return (
-        <BackgroundBeamsWithCollision className='mt-28 pb-28 rounded-4xl'>
-            <div id='Skills' className="pt-20 z-20 mt-28 w-full px-4 rounded-4xl">
-                <h1 className="heading mb-12">
-                    <SplitText
-                        text="Skills"
-                        className="heading text-2xl font-semibold text-center capitalize text-emerald-500 italic"
-                        delay={150}
-                        animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                        animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                        threshold={0.2}
-                        rootMargin="-50px"
-                    />
-                    {" "} I bring to the Table
-                </h1>
-                <div className="w-full">
-                    <GlassIcons items={items} className="w-full" />
+        <>
+            {/* Gradient background for small screens only */}
+            <div className="block md:hidden bg-gradient-to-b from-gray-800 to-black py-14 mt-16 rounded-3xl px-4">
+                <div id="Skills" className="z-20 w-full max-w-6xl mx-auto">
+                    <h1 className="heading mb-12">
+                        <SplitText
+                            text="Skills"
+                            className="heading text-2xl font-semibold text-center capitalize text-emerald-500 italic"
+                            delay={150}
+                            animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                            animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                            threshold={0.2}
+                            rootMargin="-50px"
+                        />
+                        {" "} I bring to the Table
+                    </h1>
+                    <div className="w-full">
+                        <GlassIcons items={items} />
+                    </div>
                 </div>
             </div>
-        </BackgroundBeamsWithCollision>
+
+            {/* Background beams for md and up */}
+            <div className="hidden md:block">
+                <BackgroundBeamsWithCollision className="mt-28 pb-28 rounded-4xl">
+                    <div id="Skills" className="pt-5 z-20 mt-28 w-full px-2 sm:px-4 md:px-8 rounded-4xl">
+                        <h1 className="heading mb-12">
+                            <SplitText
+                                text="Skills"
+                                className="heading text-2xl font-semibold text-center capitalize text-emerald-500 italic"
+                                delay={150}
+                                animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                                animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                                threshold={0.2}
+                                rootMargin="-50px"
+                            />
+                            {" "} I bring to the Table
+                        </h1>
+                        <div className="w-full">
+                            <GlassIcons items={items} />
+                        </div>
+                    </div>
+                </BackgroundBeamsWithCollision>
+            </div>
+        </>
     );
 };
 

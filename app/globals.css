@@ -61,37 +61,24 @@ body {
 }
 
 /* Glass Icon Button Styles */
-.icon-btns {
-  display: grid;
-  gap: 3rem;
-  width: 100%;
-  padding: 3em 0;
-  grid-template-columns: repeat(2, 1fr); /* default: small screens */
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .icon-btns {
-    grid-template-columns: repeat(3, 1fr); /* medium screens */
-  }
-}
-
-@media (min-width: 1024px) {
-  .icon-btns {
-    grid-template-columns: repeat(4, 1fr); /* large screens */
-  }
-}
-
 .icon-btn {
   background-color: transparent;
   outline: none;
   position: relative;
-  width: 6em;
+  width: 100%;
+  max-width: 6em;
   height: 6em;
   perspective: 24em;
   transform-style: preserve-3d;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
+  margin-bottom: 1rem;
+}
+@media (max-width: 640px) {
+  .icon-btn {
+    max-width: 4.5em;
+    height: 4.5em;
+  }
 }
 
 .icon-btn__back,
@@ -116,22 +103,20 @@ body {
   display: block;
   transform: rotate(15deg);
   transform-origin: 100% 100%;
-
   background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(0.5em); /* blur here */
+  backdrop-filter: blur(0.5em);
   -webkit-backdrop-filter: blur(0.5em);
 }
 
 .icon-btn__front {
-  background-color: hsla(0, 0%, 100%, 0.05); /* lighter blur glass */
+  background-color: hsla(0, 0%, 100%, 0.05);
   box-shadow: 0 0 0 0.05em hsla(0, 0%, 100%, 0.2) inset;
-  backdrop-filter: blur(0em); /* reduced blur */
+  backdrop-filter: blur(0em);
   -webkit-backdrop-filter: blur(0.2em);
   display: flex;
   transform-origin: 80% 50%;
 }
 
-/* New: Image inside glass */
 .icon-btn__img {
   width: 100%;
   height: 100%;
@@ -143,7 +128,6 @@ body {
   left: 0;
 }
 
-/* Updated: Icon sits above image */
 .icon-btn__icon {
   margin: auto;
   width: 2em;
@@ -185,11 +169,6 @@ body {
   transform: translateY(20%);
 }
 
-@media (min-width: 768px) {
-  .icon-btns {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 .parallax {
   position: relative;
   overflow: visible; /* ✅ Fix: allow left/right overflow */

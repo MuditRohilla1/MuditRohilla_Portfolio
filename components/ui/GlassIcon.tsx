@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image"; // Use Next.js Image component
+import Image from "next/image";
 
 export interface GlassIconsItem {
     icon: React.ReactElement;
@@ -32,12 +32,12 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
     };
 
     return (
-        <div className={`pl-24 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 w-full py-12 ${className || ""}`}>
+        <div className={`grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-7 md:gap-8 w-full p-5 md:p-10 ${className || ""}`}>
             {items.map((item, index) => (
                 <button
                     key={index}
                     type="button"
-                    className={`icon-btn ${item.customClass || ""}`}
+                    className={`icon-btn mx-auto ${item.customClass || ""}`}
                     aria-label={item.label}
                 >
                     <span
@@ -52,7 +52,6 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
                                 className="icon-btn__img"
                                 width={40}
                                 height={40}
-                            // You can adjust width/height as needed
                             />
                         ) : (
                             <span className="icon-btn__icon" aria-hidden="true">
@@ -66,5 +65,6 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
         </div>
     );
 };
+
 
 export default GlassIcons;
