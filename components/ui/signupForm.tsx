@@ -43,7 +43,7 @@ export function SignUpForm() {
     };
 
     return (
-        <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
+        <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-transparent">
             <h2 className="text-xl font-bold text-emerald-700 dark:text-emerald-400">
                 Let&apos;s Catch Up !!
             </h2>
@@ -51,7 +51,7 @@ export function SignUpForm() {
                 Please Fill Up the details to get in touch
             </p>
 
-            <form className="my-8" onSubmit={handleSubmit}>
+            <form className="my-8 bg-transparent" onSubmit={handleSubmit}>
                 <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
                     <LabelInputContainer>
                         <Label htmlFor="firstname">First name</Label>
