@@ -119,7 +119,7 @@ export const projects = [
         des: "Created a to-do list web application where users can sign up, log in, and manage their to-do lists. Users can add, edit, delete, and mark tasks as complete, with all data stored in a connected database.",
         img: "/to-do.jpg",
         iconLists: ["/re.svg", "/javascript.svg", "/bootstrap.svg", "/html.svg", "/css3.svg"],
-        link: "/ui.aiimg.com",
+        link: "Not_Delpoyed_Yet",
     },
     {
         id: 4,
@@ -135,7 +135,7 @@ export const projects = [
         des: "Cloned a Social Media app named TWITTER by taking considerations of some major features and applyign all the functionalites according to it...",
         img: "/Twitter-rebrands-X.webp",
         iconLists: ["/re.svg", "/javascript.svg", "/fb.svg", "/html.svg", "/css3.svg"],
-        link: "https://clone-zkw3.onrender.com/",
+        link: "https://clone-zkw3.onrender.com",
     },
     {
         id: 6,
@@ -143,7 +143,7 @@ export const projects = [
         des: "A complete working chat application with real time message send/receive using Socket.io",
         img: "/chatImage.png",
         iconLists: ["/re.svg", "/javascript.svg", "/fb.svg", "/html.svg", "/css3.svg"],
-        link: "https://clone-zkw3.onrender.com/",
+        link: "Not_Delployed_Yet",
     },
 ];
 

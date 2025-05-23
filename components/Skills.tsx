@@ -62,7 +62,7 @@ const items = [
     },
     {
         icon: <FiBarChart2 />,
-        color: "red",
+        color: "purple",
         label: "Sql",
         imageSrc: "/sql.svg",
     },
@@ -77,6 +77,12 @@ const items = [
         color: "white",
         label: "Tailwind",
         imageSrc: "/tail.svg",
+    },
+    {
+        icon: <FiFileText />,
+        color: "black",
+        label: "Git",
+        imageSrc: "/GIT.svg.svg",
     },
 ];
 
