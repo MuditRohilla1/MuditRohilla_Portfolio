@@ -82,7 +82,7 @@ export function SignUpForm() {
                     className="group/btn relative flex items-center cursor-pointer justify-center gap-2 h-10 w-full rounded-md bg-gradient-to-br from-emerald-600 to-emerald-800 font-medium text-white disabled:opacity-50 shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-emerald-700 dark:from-emerald-800 dark:to-emerald-900 dark:shadow-[0px_1px_0px_0px_#064e3b_inset,0px_-1px_0px_0px_#064e3b_inset]"
                 >
                     {loading ? (
-                        <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                        <div className="h-5 w-5 cursor-wait animate-spin rounded-full border-2 border-white border-t-transparent" />
                     ) : (
                         <span className="flex items-center gap-1">
                             Done <FaLocationArrow className="ml-1" />

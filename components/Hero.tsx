@@ -4,19 +4,18 @@ import React from "react";
 import { Spotlight } from "./ui/spotlight-new";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import { ContainerTextFlip } from "./ui/container-text-flip";
-import { HoverBorderGradient } from "./ui/hover-border-gradient";
-import { FaUser } from "react-icons/fa6";
+import { FaDownload, FaUser } from "react-icons/fa6";
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
 
 const Hero = () => {
     return (
         <div id="Home" className="relative pb-20 pt-36 overflow-visible">
-            {/* Animated Particles or Glow */}
+            {/* Glowing particles */}
             <Spotlight />
 
-            {/* Animated Glowing Blobs */}
             <motion.div
                 className="absolute top-10 left-[-100px] w-[300px] h-[300px] bg-blue-500 rounded-full blur-3xl opacity-30 z-0"
                 animate={{ scale: [1, 1.4, 1], x: [0, 30, 0], y: [0, -20, 0] }}
@@ -50,16 +49,27 @@ const Hero = () => {
                         </h1>
 
                         <TextGenerateEffect
-                            className="text-[28px] md:text-lg lg:text-xl text-gray-700 mb-6 max-w-[30rem] mx-auto md:mx-0"
+                            className="text-[28px] md:text-lg lg:text-xl text-gray-300 mb-6 max-w-[30rem] mx-auto md:mx-0"
                             words="Lets Transform Concept into Seamless Experience !!"
                         />
 
-                        <a href="#About">
-                            <button className="flex items-center gap-3 px-10 py-4 border-2 border-neutral-500 rounded-full uppercase font-semibold text-sm hover:bg-neutral-700 hover:text-white transition">
-                                About Me
-                                <FaUser />
-                            </button>
-                        </a>
+                        <div className="flex flex-row gap-6 p-5 flex-wrap justify-center md:justify-start">
+                            {/* About Me Button */}
+                            <a href="#About">
+                                <button className="flex cursor-pointer items-center gap-3 px-8 py-3 border-2 rounded-full uppercase font-semibold text-sm text-cyan-300 border-cyan-400 bg-white/10 backdrop-blur-md shadow-lg hover:bg-cyan-500/30 hover:text-white transition-all duration-300">
+                                    About Me
+                                    <FaUser />
+                                </button>
+                            </a>
+
+                            {/* Download Resume Button */}
+                            <a href="/Mudit_Resume.pdf" download={"Mudit_Resume"}>
+                                <button className="flex cursor-pointer items-center gap-3 px-8 py-3 border-2 rounded-full uppercase font-semibold text-sm text-violet-300 border-violet-400 bg-white/10 backdrop-blur-md shadow-lg hover:bg-violet-500/30 hover:text-white transition-all duration-300">
+                                    Download Resume
+                                    <FaDownload />
+                                </button>
+                            </a>
+                        </div>
                     </motion.div>
 
                     {/* Image Section */}
